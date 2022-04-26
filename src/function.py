@@ -1,6 +1,8 @@
 import roman
 
-def get_greater_roman(text) -> dict:
+def get_greater_roman(text: str) -> dict:
+    """ Get the greater Roman value within a string """
+
     valid_romans = ["I", "V", "X", "L", "C", "D", "M"]
 
     text_romans = ""

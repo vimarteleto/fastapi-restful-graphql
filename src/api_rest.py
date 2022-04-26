@@ -11,7 +11,7 @@ class Request(BaseModel):
 	text: str
 
 
-@router.post("/")
+@router.post("/search")
 def search(request: Request):
     text = request.text
     return get_greater_roman(text)
