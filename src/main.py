@@ -1,13 +1,14 @@
-
-from os import link
+# import requests
 from fastapi import FastAPI
-
-import api_rest
-import api_graphql
-
+from routes.category_route import router as category_router
 
 app = FastAPI()
 
+@app.get("/", tags=["Tag"])
+def home():
+    return {
+        "message": "Hello!"
+    }
 
-app.include_router(api_rest.router)
-app.include_router(api_graphql.router,  prefix="/graphql")
+
+app.include_router(category_router, tags=["Category"], prefix="/category")
